@@ -39,10 +39,18 @@ form.addEventListener("submit", function(){
     document.body.classList.remove("modal-open");
 });
 
-// hamburger toggle
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
+const overlay = document.getElementById("overlay");
 
+// open menu
 menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
+    overlay.classList.toggle("show");
+});
+
+// close when clicking outside
+overlay.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    overlay.classList.remove("show");
 });
