@@ -54,3 +54,13 @@ overlay.addEventListener("click", () => {
     navLinks.classList.remove("active");
     overlay.classList.remove("show");
 });
+
+// close drawer when any nav item is clicked
+const navItems = document.querySelectorAll("#nav-links a");
+
+navItems.forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        overlay.classList.remove("show");
+    });
+});
