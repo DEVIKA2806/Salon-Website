@@ -18,6 +18,7 @@ body{
     color:#fff;
     padding:15px 20px;
     position:relative;
+    height:70px;
 }
 
 .nav-links{
@@ -32,6 +33,17 @@ body{
 .nav-links a{
     color:white;
     text-decoration:none;
+}
+
+.logo{
+    font-size:22px;
+    white-space:nowrap;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:10002;
 }
 
 /* Hero */
@@ -267,81 +279,6 @@ footer{
     .hero-text h1{
         font-size:30px;
     }
-    .navbar{
-        flex-direction:column;
-    }
-}
-
-/* ===== MOBILE RESPONSIVE ===== */
-@media (max-width: 768px){
-
-    /* navbar */
-    .navbar{
-        flex-direction:column;
-        text-align:center;
-        padding:15px 10px;
-    }
-
-    .nav-links{
-        flex-direction:column;
-        gap:10px;
-        margin-top:10px;
-    }
-
-    /* hero text */
-    .hero{
-        height:70vh;
-        padding:20px;
-    }
-
-    .hero-text h1{
-        font-size:28px;
-    }
-
-    .hero-text p{
-        font-size:16px;
-    }
-
-    /* services cards */
-    .service-box{
-        flex-direction:column;
-        align-items:center;
-    }
-
-    .card{
-        width:90%;
-        max-width:320px;
-    }
-
-    /* gallery */
-    .gallery-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    /* about */
-    .about{
-        padding:40px 15px;
-    }
-
-    /* map */
-    .map-container iframe{
-        height:250px;
-    }
-
-    /* modal form */
-    .modal-content{
-        width:92%;
-        padding:20px;
-    }
-
-    .form-row{
-        flex-direction:column;
-    }
-
-    .contact-form input,
-    .contact-form textarea{
-        font-size:16px; /* prevents zoom on iPhone */
-    }
 }
 
 /* ===== HAMBURGER MENU ===== */
@@ -360,86 +297,50 @@ footer{
     border-radius:2px;
 }
 
-/* MOBILE VIEW */
+/* ===== MOBILE SIDE DRAWER ===== */
 @media (max-width:768px){
 
-    .menu-toggle{
-        display:flex;
-    }
-
-    .nav-links{
-        position:absolute;
-        top:70px;
-        left:0;
-        width:100%;
-        background:#111;
-        flex-direction:column;
-        text-align:center;
-        max-height:0;
-        overflow:hidden;
-        transition:max-height 0.3s ease;
-    }
-
-    .nav-links li{
-        margin:15px 0;
-    }
-
-    /* when menu opens */
-    .nav-links.active{
-        max-height:300px;
-    }
-}
-
-/* ===== MOBILE SIDE DRAWER MENU ===== */
-
-@media (max-width:768px){
-
-    /* hamburger right */
     .menu-toggle{
         display:flex;
         position:absolute;
         right:20px;
-        top:20px;
-        z-index:10001;
+        top:18px;
+        z-index:10003;
     }
 
-    /* SIDE PANEL */
+    /* hide desktop nav */
     .nav-links{
         position:fixed;
         top:0;
-        right:-260px;   /* hidden outside screen */
-        height:100%;
-        width:260px;
+        right:-270px;
+        width:270px;
+        height:100vh;
         background:#111;
         flex-direction:column;
-        padding-top:80px;
+        padding-top:90px;
         transition:0.35s ease;
-        z-index:10000;
+        z-index:10002;
     }
 
     .nav-links li{
-        margin:20px 0;
+        margin:18px 0;
+        text-align:left;
+        padding-left:25px;
     }
 
-    .nav-links a{
-        font-size:18px;
-    }
-
-    /* WHEN OPEN */
     .nav-links.active{
         right:0;
     }
 
-    /* DARK BACKGROUND OVERLAY */
     .overlay{
         position:fixed;
         top:0;
         left:0;
         width:100%;
         height:100%;
-        background:rgba(0,0,0,0.5);
+        background:rgba(0,0,0,0.55);
         display:none;
-        z-index:9999;
+        z-index:10001;
     }
 
     .overlay.show{
