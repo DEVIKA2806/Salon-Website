@@ -35,10 +35,14 @@ window.onclick = function(e){
 const form = document.getElementById("appointmentForm");
 
 form.addEventListener("submit", function(){
-    setTimeout(() => {
-        form.reset();
-        modal.style.display = "none";
-        document.body.classList.remove("modal-open");
-        alert("Appointment request sent successfully!");
-    }, 800);
+    modal.style.display = "none";
+    document.body.classList.remove("modal-open");
+});
+
+// hamburger toggle
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
 });
